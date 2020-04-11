@@ -85,7 +85,6 @@
                     @error('file_contract')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                    <p class="help-block">Example block-level help text here.</p>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

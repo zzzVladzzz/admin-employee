@@ -18,11 +18,12 @@ class CreateEmployeeTable extends Migration
             $table->string('name', 255);
             $table->string('email', 255);
             $table->integer('phone');
+            $table->integer('manager_id')->nullable();
             $table->string('address', 255);
             $table->timestamp('contract_date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
-            $table->time('contract_expiration_date');
-            $table->string('file_contract',255);
+            $table->date('contract_expiration_date');
+            $table->string('file_contract',255)->nullable();
         });
     }
 

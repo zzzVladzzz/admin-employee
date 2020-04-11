@@ -8,6 +8,18 @@ use Illuminate\Http\Request;
 
 class UserObserver
 {
+
+    /**
+     * Handle the user "creating" event.
+     *
+     * @param  \App\User  $user
+     * @return void
+     */
+    public function creating(User $user)
+    {
+        $user->api_token = bin2hex(openssl_random_pseudo_bytes(30));
+    }
+
     /**
      * Handle the user "created" event.
      *
@@ -17,11 +29,6 @@ class UserObserver
     public function created(User $user)
     {
         $user->assignRole(['name' => User::getRoleName(User::$role)]);
-    }
-
-    public function creating(User $user)
-    {
-
     }
 
     /**

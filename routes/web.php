@@ -13,14 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-//Route::get('/', 'HomeController@main')->name('main');
 
 Route::get('/invalid', 'VerifiedUserController@invalidAccount')->name('time-is-out');
-//Route::middleware('timeIsOut')
 Auth::routes();
-Route::resource('/employee', 'EmployeeController');
+Route::resource('/employee', 'EmployeeController')->middleware(['auth', 'administrator']);
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/detail-view-manager/{user}', 'HomeController@detailViewManager')->name('detail-view-manager');

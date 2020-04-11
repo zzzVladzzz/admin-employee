@@ -1,3 +1,4 @@
+
 <template>
     <div class="container">
         <div class="row justify-content-center">
@@ -15,9 +16,19 @@
 </template>
 
 <script>
+    import Datepicker from 'vuejs-datepicker';
+
     export default {
+        data: function () {
+            return {
+                count: 0
+            }
+        },
         mounted() {
             console.log('Component mounted.')
+        },
+        components: {
+            Datepicker
         }
     }
 </script>

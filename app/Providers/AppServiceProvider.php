@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Employee;
+use App\Observers\EmployeeObserver;
 use App\Observers\UserObserver;
 use App\User;
 use Illuminate\Support\ServiceProvider;
@@ -28,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         User::observe(UserObserver::class);
+
+        Employee::observe(EmployeeObserver::class);
 
         Schema::defaultStringLength(191);
     }

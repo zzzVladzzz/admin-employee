@@ -19,7 +19,7 @@
             </div>
         </div>
                 <div>
-                    <a href="{{route('employee.index')}}">Create Employee</a>
+                    <a href="{{route('employee.index')}}">Employee</a>
                 </div>
     </div>
 </div>

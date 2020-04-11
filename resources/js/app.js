@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+import Datepicker from 'vuejs-datepicker';
 
 window.Vue = require('vue');
 
@@ -26,7 +27,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+// var state = {
+//     date: new Date(2016, 9,  16)
+// };
 const app = new Vue({
     el: '#app',
+    // components: {
+    //     vuejsDatepicker
+    // }
 });
